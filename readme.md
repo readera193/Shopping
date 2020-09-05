@@ -33,8 +33,3 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-生成代碼提示工具
-
-```
-php artisan ide-helper:generate
-```
