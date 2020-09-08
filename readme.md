@@ -33,3 +33,10 @@ cp .env.example .env
 php artisan key:generate
 ```
 
+編譯前端(CSS & JS)套件
+
+```
+npm install
+npm run dev
+```
+
