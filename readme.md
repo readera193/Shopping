@@ -18,6 +18,7 @@ sites:
 安裝擴展包依賴
 
 ```
+(如果遇到權限問題：chmod -R 777 vendor)
 composer install
 ```
 
