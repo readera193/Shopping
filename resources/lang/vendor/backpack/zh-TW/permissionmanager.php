@@ -10,7 +10,7 @@ return [
     | Author: Lúdio Oliveira <ludio.ao@gmail.com>
     |
      */
-    'name' => '姓名',
+    'name' => '名稱',
     'role' => '角色',
     'roles' => '角色',
     'roles_have_permission' => '有此權限的角色',
