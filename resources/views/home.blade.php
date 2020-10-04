@@ -12,7 +12,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="/admin/dashboard">暫用後台連結</a>
+                    登入成功
                 </div>
             </div>
         </div>
