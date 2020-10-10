@@ -1579,7 +1579,7 @@
                     /**
          * Get the currently authenticated user.
          *
-         * @return \App\User|null 
+         * @return \Backpack\Base\app\Models\BackpackUser|null 
          * @static 
          */ 
         public static function user()
@@ -1614,7 +1614,7 @@
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \App\User|false 
+         * @return \Backpack\Base\app\Models\BackpackUser|false 
          * @static 
          */ 
         public static function onceUsingId($id)
@@ -1678,7 +1678,7 @@
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\User|false 
+         * @return \Backpack\Base\app\Models\BackpackUser|false 
          * @static 
          */ 
         public static function loginUsingId($id, $remember = false)
@@ -1740,7 +1740,7 @@
                     /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\User 
+         * @return \Backpack\Base\app\Models\BackpackUser 
          * @static 
          */ 
         public static function getLastAttempted()
@@ -1842,7 +1842,7 @@
                     /**
          * Return the currently cached user.
          *
-         * @return \App\User|null 
+         * @return \Backpack\Base\app\Models\BackpackUser|null 
          * @static 
          */ 
         public static function getUser()
@@ -1888,7 +1888,7 @@
                     /**
          * Determine if the current user is authenticated.
          *
-         * @return \App\User 
+         * @return \Backpack\Base\app\Models\BackpackUser 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */ 
@@ -12846,7 +12846,463 @@
      
 }
 
-    
+        namespace Backpack\CRUD { 
+            /**
+     * 
+     *
+     */ 
+        class CrudServiceProvider {
+         
+    }
+     
+}
+
+    namespace Creativeorange\Gravatar\Facades { 
+            /**
+     * 
+     *
+     * @see \Creativeorange\Gravatar\Gravatar
+     */ 
+        class Gravatar {
+                    /**
+         * Override the default image fallback set in the config.
+         * 
+         * Can either be a public URL to an image or a valid themed image.
+         * For more info, visit http://en.gravatar.com/site/implement/images/#default-image
+         *
+         * @param string $fallback
+         * @return \Creativeorange\Gravatar\Gravatar 
+         * @static 
+         */ 
+        public static function fallback($fallback)
+        {
+                        /** @var \Creativeorange\Gravatar\Gravatar $instance */
+                        return $instance->fallback($fallback);
+        }
+                    /**
+         * Check if Gravatar has an avatar for the given email address
+         *
+         * @param string $email
+         * @return bool 
+         * @throws InvalidEmailException
+         * @static 
+         */ 
+        public static function exists($email)
+        {
+                        /** @var \Creativeorange\Gravatar\Gravatar $instance */
+                        return $instance->exists($email);
+        }
+                    /**
+         * Get the gravatar url
+         *
+         * @param string $email
+         * @param string $configGroup
+         * @return string 
+         * @throws InvalidEmailException
+         * @static 
+         */ 
+        public static function get($email, $configGroup = 'default')
+        {
+                        /** @var \Creativeorange\Gravatar\Gravatar $instance */
+                        return $instance->get($email, $configGroup);
+        }
+         
+    }
+     
+}
+
+    namespace Intervention\Image\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class Image {
+                    /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @return self 
+         * @static 
+         */ 
+        public static function configure($config = [])
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->configure($config);
+        }
+                    /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function make($data)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->make($data);
+        }
+                    /**
+         * Creates an empty image canvas
+         *
+         * @param int $width
+         * @param int $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function canvas($width, $height, $background = null)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->canvas($width, $height, $background);
+        }
+                    /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param int $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */ 
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->cache($callback, $lifetime, $returnObj);
+        }
+         
+    }
+     
+}
+
+    namespace Jenssegers\Date { 
+            /**
+     * 
+     *
+     */ 
+        class Date {
+         
+    }
+     
+}
+
+    namespace Prologue\Alerts\Facades { 
+            /**
+     * 
+     *
+     * @method static \Prologue\Alerts\AlertsMessageBag success(string $text)
+     * @method static \Prologue\Alerts\AlertsMessageBag error(string $text)
+     * @method static \Prologue\Alerts\AlertsMessageBag warning(string $text)
+     * @method static \Prologue\Alerts\AlertsMessageBag info(string $text)
+     */ 
+        class Alert {
+                    /**
+         * Store the messages in the current session.
+         *
+         * @return \Prologue\Alerts\AlertsMessageBag 
+         * @static 
+         */ 
+        public static function flash()
+        {
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->flash();
+        }
+                    /**
+         * Deletes all messages.
+         *
+         * @param bool $withSession
+         * @return \Prologue\Alerts\AlertsMessageBag 
+         * @static 
+         */ 
+        public static function flush($withSession = true)
+        {
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->flush($withSession);
+        }
+                    /**
+         * Checks to see if any messages exist.
+         *
+         * @param null $key A specific level you wish to check for.
+         * @return bool 
+         * @static 
+         */ 
+        public static function has($level = null)
+        {
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->has($level);
+        }
+                    /**
+         * Get the number of messages in the message bag.
+         *
+         * @param null $level A specific level name you wish to count.
+         * @return int 
+         * @static 
+         */ 
+        public static function count($level = null)
+        {
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->count($level);
+        }
+                    /**
+         * Returns the alert levels from the config.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getLevels()
+        {
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->getLevels();
+        }
+                    /**
+         * Returns the Illuminate Session Store.
+         *
+         * @return \Illuminate\Session\Store 
+         * @static 
+         */ 
+        public static function getSession()
+        {
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->getSession();
+        }
+                    /**
+         * Returns the Illuminate Config Repository.
+         *
+         * @return \Illuminate\Config\Repository 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->getConfig();
+        }
+                    /**
+         * Get the keys present in the message bag.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function keys()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->keys();
+        }
+                    /**
+         * Add a message to the bag.
+         *
+         * @param string $key
+         * @param string $message
+         * @return \Prologue\Alerts\AlertsMessageBag 
+         * @static 
+         */ 
+        public static function add($key, $message)
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->add($key, $message);
+        }
+                    /**
+         * Merge a new array of messages into the bag.
+         *
+         * @param \Illuminate\Contracts\Support\MessageProvider|array $messages
+         * @return \Prologue\Alerts\AlertsMessageBag 
+         * @static 
+         */ 
+        public static function merge($messages)
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->merge($messages);
+        }
+                    /**
+         * Determine if messages exist for any of the given keys.
+         *
+         * @param array|string $keys
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasAny($keys = [])
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->hasAny($keys);
+        }
+                    /**
+         * Get the first message from the bag for a given key.
+         *
+         * @param string $key
+         * @param string $format
+         * @return string 
+         * @static 
+         */ 
+        public static function first($key = null, $format = null)
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->first($key, $format);
+        }
+                    /**
+         * Get all of the messages from the bag for a given key.
+         *
+         * @param string $key
+         * @param string $format
+         * @return array 
+         * @static 
+         */ 
+        public static function get($key, $format = null)
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->get($key, $format);
+        }
+                    /**
+         * Get all of the messages for every key in the bag.
+         *
+         * @param string $format
+         * @return array 
+         * @static 
+         */ 
+        public static function all($format = null)
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->all($format);
+        }
+                    /**
+         * Get all of the unique messages for every key in the bag.
+         *
+         * @param string $format
+         * @return array 
+         * @static 
+         */ 
+        public static function unique($format = null)
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->unique($format);
+        }
+                    /**
+         * Get the raw messages in the container.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function messages()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->messages();
+        }
+                    /**
+         * Get the raw messages in the container.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getMessages()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->getMessages();
+        }
+                    /**
+         * Get the messages for the instance.
+         *
+         * @return \Illuminate\Support\MessageBag 
+         * @static 
+         */ 
+        public static function getMessageBag()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->getMessageBag();
+        }
+                    /**
+         * Get the default message format.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getFormat()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->getFormat();
+        }
+                    /**
+         * Set the default message format.
+         *
+         * @param string $format
+         * @return \Illuminate\Support\MessageBag 
+         * @static 
+         */ 
+        public static function setFormat($format = ':message')
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->setFormat($format);
+        }
+                    /**
+         * Determine if the message bag has any messages.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function isEmpty()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->isEmpty();
+        }
+                    /**
+         * Determine if the message bag has any messages.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function isNotEmpty()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->isNotEmpty();
+        }
+                    /**
+         * Determine if the message bag has any messages.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function any()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->any();
+        }
+                    /**
+         * Get the instance as an array.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function toArray()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->toArray();
+        }
+                    /**
+         * Convert the object into something JSON serializable.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function jsonSerialize()
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->jsonSerialize();
+        }
+                    /**
+         * Convert the object to its JSON representation.
+         *
+         * @param int $options
+         * @return string 
+         * @static 
+         */ 
+        public static function toJson($options = 0)
+        {            //Method inherited from \Illuminate\Support\MessageBag         
+                        /** @var \Prologue\Alerts\AlertsMessageBag $instance */
+                        return $instance->toJson($options);
+        }
+         
+    }
+     
+}
+
+
 namespace  { 
             class App extends \Illuminate\Support\Facades\App {}
             class Artisan extends \Illuminate\Support\Facades\Artisan {}
@@ -15329,9 +15785,38 @@ namespace  {
             class URL extends \Illuminate\Support\Facades\URL {}
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
+            class CRUD extends \Backpack\CRUD\CrudServiceProvider {}
+            class Gravatar extends \Creativeorange\Gravatar\Facades\Gravatar {}
+            class Image extends \Intervention\Image\Facades\Image {}
+            class Date extends \Jenssegers\Date\Date {}
+            class Alert extends \Prologue\Alerts\Facades\Alert {}
      
 }
 
 
 
+namespace Illuminate\Support {
+    /**
+     * Methods commonly used in migrations
+     *
+     * @method Fluent after(string $column) Add the after modifier
+     * @method Fluent charset(string $charset) Add the character set modifier
+     * @method Fluent collation(string $collation) Add the collation modifier
+     * @method Fluent comment(string $comment) Add comment
+     * @method Fluent default($value) Add the default modifier
+     * @method Fluent first() Select first row
+     * @method Fluent index(string $name = null) Add the in dex clause
+     * @method Fluent on(string $table) `on` of a foreign key
+     * @method Fluent onDelete(string $action) `on delete` of a foreign key
+     * @method Fluent onUpdate(string $action) `on update` of a foreign key
+     * @method Fluent primary() Add the primary key modifier
+     * @method Fluent references(string $column) `references` of a foreign key
+     * @method Fluent nullable(bool $value = true) Add the nullable modifier
+     * @method Fluent unique(string $name = null) Add unique index clause
+     * @method Fluent unsigned() Add the unsigned modifier
+     * @method Fluent useCurrent() Add the default timestamp value
+     * @method Fluent change() Add the change modifier
+     */
+    class Fluent {}
+}
 
