@@ -7,7 +7,7 @@
 
 ```
 folders:
-    - map: ~/my-path/Shopping # 你本地的項目路徑
+    - map: ~/my-path/Shopping # 本地的項目路徑
       to: /home/vagrant/code/Shopping
 
 sites:
@@ -15,7 +15,7 @@ sites:
       to: /home/vagrant/code/Shopping/public
 ```
 
-安裝擴展包依賴
+安裝相關套件
 
 ```
 composer install
