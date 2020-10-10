@@ -33,6 +33,18 @@ cp .env.example .env
 php artisan key:generate
 ```
 
+資料庫遷移
+
+```
+php artisan migrate
+```
+
+產生測試資料
+
+```
+php artisan db:seed
+```
+
 編譯前端(CSS & JS)套件
 
 ```
