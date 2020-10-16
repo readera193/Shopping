@@ -13,4 +13,8 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::redirect('/', 'products')->name('products');
+
+Route::resource('products', 'ProductController', ['only' => [
+    'index', 'show'
+]]);
