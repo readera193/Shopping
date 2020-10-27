@@ -1,5 +1,5 @@
 # Shopping
-購物網站
+195-購物網站
 
 ## 安裝
 
@@ -33,15 +33,10 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-資料庫遷移
+資料庫遷移、產生測試資料(如使用 `homestead` 則在虛擬機環境內執行)
 
 ```
 php artisan migrate
-```
-
-產生測試資料
-
-```
 php artisan db:seed
 ```
 
