@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +35,23 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * @return string
+     */
+    public function username()
+    {
+        // 取得 name 欄位
+        $value = request()->input('name');
+
+        // 根據輸入的資料判斷欄位
+        $fieldType = filter_var($value, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+
+        // 將轉換後的欄位放回 request 中
+        request()->merge([$fieldType => $value]);
+
+        // 傳回欄位名稱
+        return $fieldType;
     }
 }

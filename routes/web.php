@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::redirect('/', 'products')->name('products');
+
+Route::resource('products', 'ProductController', ['only' => [
+    'index', 'show'
+]]);
