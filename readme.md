@@ -13,6 +13,9 @@ folders:
 sites:
     - map: shopping.test
       to: /home/vagrant/code/Shopping/public
+      
+databases:
+    - homestead # 資料庫名稱
 ```
 
 安裝相關套件
@@ -21,7 +24,7 @@ sites:
 composer install
 ```
 
-複製 `.env` 檔 (需設定APP_URL、DB帳密)
+複製 `.env` 檔 (需設定DB資料庫名稱、帳密)
 
 ```
 cp .env.example .env
