@@ -19,6 +19,7 @@ footer {
     background-color: #f5f5f5;
 }
 
+//評價等級
 .ratings {
     position: relative;
     vertical-align: middle;
@@ -39,4 +40,8 @@ footer {
     }
 }
 
+//分頁置中
+.pagination {
+    justify-content: center;
+}
 
