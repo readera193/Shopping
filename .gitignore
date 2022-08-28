@@ -27,3 +27,5 @@ Homestead.json
 /public/css
 /public/fonts
 /public/mix-manifest.json
+
+.vscode
