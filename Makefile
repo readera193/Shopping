@@ -3,8 +3,10 @@ VAG=vagrant
 all: start
 
 init:
-	php ./vendor/homestead/bin make
 	cp .env.example .env
+	rm -f Homestead.yaml
+	php ./vendor/bin/homestead make
+	sed -i '16i\        php: "7.4"\' Homestead.yaml
 
 start:
 	$(VAG) up
