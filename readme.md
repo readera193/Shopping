@@ -1,6 +1,11 @@
 # 195-購物網站 首頁
 ![首頁](Shopping.jpg)
 
+# 軟體
+- [NodeJS](https://nodejs.org/en/)
+- [composer](https://getcomposer.org/)
+- [Vagrant](https://www.vagrantup.com/)
+
 # 安裝
 
 ### 1. 安裝相關套件
